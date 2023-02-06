@@ -1,0 +1,20 @@
+name: civo-navigate
+runtime: nodejs
+description: Production Ready Kubernetes Workshop Pulumi program
+config:
+  civo:region: LON1
+  # Use the civo cli to get a list of available sizes
+  # civo size ls -s kubernetes
+  cluster:node_size: g3.k3s.medium
+  # The number of nodes in your cluster
+  cluster:node_count: 1
+  # The CNI your cluster should use. Availability depending on Civo. Currently only flannel and cilium is supported.
+  cluster:cni: cilium
+  # The kubernetes version.
+  # civo k3s version --region <region>
+  cluster:kubernetes_version: 1.25.0
+  # The domain name
+  dns:domain: ediri.cloud
+  # If you manage your domain outside of Civo set this to true
+  dns:skip: false
+

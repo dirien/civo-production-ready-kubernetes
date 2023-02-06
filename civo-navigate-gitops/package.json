@@ -1,0 +1,13 @@
+{
+  "name": "pulumi-up-gitops",
+  "main": "index.ts",
+  "devDependencies": {
+    "@types/node": "18"
+  },
+  "dependencies": {
+    "@pulumi/pulumi": "3.53.1",
+    "@pulumi/kubernetes": "3.23.1",
+    "yaml": "2.2.1",
+    "@pulumi/command": "0.7.0"
+  }
+}
