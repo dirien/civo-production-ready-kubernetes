@@ -1,0 +1,11 @@
+{
+  "name": "pulumi-up",
+  "main": "index.ts",
+  "devDependencies": {
+    "@types/node": "18"
+  },
+  "dependencies": {
+    "@pulumi/pulumi": "3.53.1",
+    "@pulumi/civo": "2.3.1"
+  }
+}

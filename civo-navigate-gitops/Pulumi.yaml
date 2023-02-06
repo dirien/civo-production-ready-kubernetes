@@ -1,0 +1,14 @@
+name: civo-navigate-gitops
+runtime:
+  name: nodejs
+  options:
+    typescript: true
+description: A minimal Kubernetes TypeScript Pulumi program
+config:
+  gitops:directory: "../gitops"
+  acme:email: info@ediri.de
+  acme:server: https://acme-staging-v02.api.letsencrypt.org/directory
+  issuer:kind: ClusterIssuer
+  issuer:name: letsencrypt-staging
+  infra:stackReference: dirien/civo-navigate/dev
+
