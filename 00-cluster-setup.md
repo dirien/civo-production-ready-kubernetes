@@ -2,11 +2,38 @@
 
 ## Overview
 
-In order to set up a GitOps workflow, we are going to need a Kubernetes Cluster. The goal of this chapter is firstly to
+In order to set up a GitOps workflow, we are going to need a Kubernetes Cluster. The goal of this chapter is to firstly
 create a Civo Kubernetes Cluster using Pulumi.
 
-Not only we are going to create a Civo Kubernetes Cluster, but we will create a Civo Object Storage Bucket and a Civo
-DNS Domain too. The DNS Domain will be used in the next chapter to setup the GitOps workflow.
+We are not only going to create a Civo Kubernetes Cluster, we will create a Civo Object Storage Bucket and a Civo
+DNS Domain too. The DNS Domain will be used in the next chapter to set up the GitOps workflow.
+
+### Modern Infrastructure As Code with Pulumi
+
+Pulumi is an open-source infrastructure-as-code tool for creating, deploying and managing cloud
+infrastructure. Pulumi works with traditional infrastructures like VMs, networks, and databases and modern
+architectures, including containers, Kubernetes clusters, and serverless functions. Pulumi supports dozens of public,
+private, and hybrid cloud service providers.
+
+Pulumi is a multi-language infrastructure as Code tool using imperative languages to create a declarative
+infrastructure description.
+
+You have a wide range of programming languages available, and you can use the one you and your team are the most
+comfortable with. Currently, (2/2023) Pulumi supports the following languages:
+
+* Node.js (JavaScript / TypeScript)
+
+* Python
+
+* Go
+
+* Java
+
+* .NET (C#, VB, F#)
+
+* YAML
+
+In this workshop, we will use `Typescript` and `Go` as our programming language.
 
 ## Prerequisites
 
@@ -22,9 +49,9 @@ To successful complete this chapter, you must meet all of these requirements:
 
 ### Step 0 - Custom Domain
 
-civoThese workshops assumes, that you want to manage your domain using Civo DNS. For this you need to point the
-nameserver of your domain to the Civo nameserver (`ns01.civo.com` and `ns1.civo.com`). If you have a domain, and you
-cant move them please change the config value `dns:skip` to `true`
+These workshops assume, that you want to manage your domain using Civo DNS. For this you need to point the
+nameserver of your domain to the Civo nameservers (`ns01.civo.com` and `ns1.civo.com`). If you have a domain, and you
+can't move them please change the config value `dns:skip` to `true`. This will skip the DNS Service creation in Civo.
 
 ### Step 1 - Clone the repo
 
