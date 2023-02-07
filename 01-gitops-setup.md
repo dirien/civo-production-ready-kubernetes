@@ -32,21 +32,22 @@ production-ready applications installed.
 
 For this chapter, you need this fulfill this additional prerequisites
 
-- s3cmd
-- (kubeseal)
-- komodor API Key (https://app.komodor.com/)
-- flux CLI (https://fluxcd.io/docs/installation/)
+- [s3cmd](https://s3tools.org/s3cmd)
+- Komodor API Key (https://app.komodor.com/)
+- FluxCD CLI (https://fluxcd.io/docs/installation/)
 
 ## Instructions
 
 ### Step 0 - Familiarize with the project structure
 
-Take a look in the `civo-navigate-gitops` folder. You will see the following structure.
+Take a look in the `civo-navigate-gitops` folder. You will find a `index.ts` file, which is the entrypoint of the Pulumi
+program. The different services are categorized in different categories. We have `services`, `infrastructure`
+and `config`.
 
-You will see that the `index.ts` file is the entrypoint of the Pulumi program.
+In the folder `gitops` you see the different Pulumi Component Resources we use to create the GitOps files. The `base`
+folder contains the `FluxCD` component resource.
 
-The different services are categorized in different categories. We have `services`, `infrastructure` and `config`. All
-the files get rendered to the `gitops` folder.
+All the files will get rendered to the `gitops` folder in the root of the project.
 
 ### Step 1 - Run Pulumi Up
 

@@ -1,9 +1,6 @@
-import * as k8s from "@pulumi/kubernetes";
 import * as pulumi from "@pulumi/pulumi";
 import * as YAML from "yaml";
 import * as fs from 'fs'
-import {local} from "@pulumi/command";
-import {Config, Output, provider} from "@pulumi/pulumi";
 import {Service} from "../base/service";
 import {moveFilesForService, BaseLayer, CollectionArgs} from "../base/baseLayer";
 
@@ -377,7 +374,7 @@ export class Services extends BaseLayer {
         moveFilesForService(args, komodor, this, name);
 
         pulumi.all([]).apply(() => {
-            fs.mkdir(`${args.targetDir}/${name}`, {recursive: true}, (err) => {
+            fs.mkdir(`${args.targetDir}/${name}`, {recursive: true}, () => {
                 fs.writeFileSync(`${args.targetDir}/${name}/kustomization.yaml`, YAML.stringify({
                         apiVersion: "kustomize.config.k8s.io/v1beta1",
                         kind: "Kustomization",

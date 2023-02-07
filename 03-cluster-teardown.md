@@ -4,7 +4,7 @@ In this chapter we will use Pulumi to destroy our Civo Kubernetes Cluster we cre
 
 ### Prerequisites
 
-- Pulumi CLI
+- The Pulumi [CLI](https://www.pulumi.com/docs/get-started/install/)
 
 ## Instructions
 
@@ -42,4 +42,4 @@ Look in the Civo dashboard and double check that the cluster is being terminated
 
 ### Step 3 - Now Celebrate, You're Done!
 
-![](https://media.giphy.com/media/TgI82cyv2haUubdAzK/giphy.gif)
+![](https://cdn.dribbble.com/users/234969/screenshots/5414177/burst_trophy_dribbble.gif)

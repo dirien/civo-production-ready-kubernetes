@@ -3,9 +3,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as YAML from "yaml";
 import * as fs from 'fs'
 import {local} from "@pulumi/command";
-import {Config, Output, provider} from "@pulumi/pulumi";
-import {Service} from "../base/service";
-import {moveFilesForService, CollectionArgs, BaseLayer} from "../base/baseLayer";
+import {Config} from "@pulumi/pulumi";
+import {CollectionArgs, BaseLayer} from "../base/baseLayer";
 
 
 export class BaseConfig extends BaseLayer {
@@ -67,10 +66,10 @@ export class BaseConfig extends BaseLayer {
 
 
         const kustomize = pulumi.all([issuer.metadata.name])
-            .apply((issuerName) => {
-                fs.mkdir(`${args.targetDir}/${name}`, {recursive: true}, (err) => {
-                    let content : string;
-                    fs.readdir(`rendered/${name}/1-manifest/`, (err, files) => {
+            .apply(() => {
+                fs.mkdir(`${args.targetDir}/${name}`, {recursive: true}, () => {
+                    let content: string;
+                    fs.readdir(`rendered/${name}/1-manifest/`, (_err, files) => {
                         let yamlFiles = files.filter(file => {
                             return file.endsWith('.yaml') && file !== 'kustomization.yaml';
                         });

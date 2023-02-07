@@ -2,9 +2,6 @@ import * as k8s from "@pulumi/kubernetes";
 import * as pulumi from "@pulumi/pulumi";
 import * as YAML from "yaml";
 import * as fs from 'fs'
-import {local} from "@pulumi/command";
-import {Output} from "@pulumi/pulumi";
-import {string} from "yaml/dist/schema/common/string";
 
 export interface ServiceArgs {
     chart: pulumi.Input<string>;
@@ -100,7 +97,7 @@ export class Service extends pulumi.ComponentResource {
         pulumi.all([args.namespaceName, helmRelease.metadata.name])
             .apply(([namespaceName]) => {
                 let content: string;
-                fs.readdir(`rendered/${name}/1-manifest/`, (err, files) => {
+                fs.readdir(`rendered/${name}/1-manifest/`, (_err, files) => {
                     let yamlFiles = files.filter(file => {
                         return file.endsWith('.yaml') && file !== 'kustomization.yaml';
                     });
