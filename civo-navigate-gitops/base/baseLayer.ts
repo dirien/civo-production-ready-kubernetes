@@ -12,7 +12,7 @@ export interface CollectionArgs {
 export class BaseLayer extends pulumi.ComponentResource {
     readonly name: string
 
-    constructor(name: string, args: CollectionArgs, opts?: pulumi.ComponentResourceOptions) {
+    constructor(name: string, _args: CollectionArgs, opts?: pulumi.ComponentResourceOptions) {
         super(`collection:index:${name}`, name, {}, opts);
         this.name = name;
     }

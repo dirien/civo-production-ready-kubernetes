@@ -3,14 +3,15 @@
 ### Welcome, Kubernetes Friends!
 
 The goal of this workshop is for you to bootstrap a production ready Civo Kubernetes Cluster. Every lab of the workshops
-uses Pulumi. From creating the infrastructure in the Civo Region of your choice to setting up the GitOps Pipeline with FluxCD.
+uses Pulumi. From creating the infrastructure in the Civo Region of your choice to setting up the GitOps Pipeline with
+FluxCD.
 
 ### Content
+
 - [Chapter 0 - Create a Civo Kubernetes Cluster with Pulumi](./00-cluster-setup.md)
 - [Chapter 1 - Setup FluxCD](./01-gitops-setup.md)
 - [Chapter 2: Building a CLI using the Pulumi Automation API](./02-automation-api.md)
 - [Chapter 3 - Destroy the Civo Kubernetes Custer with Pulumi](./03-cluster-teardown.md)
-
 
 ### Troubleshooting Tips
 
@@ -22,6 +23,6 @@ If you get stuck during the workshops, you can try the following things in order
 
 ### Want to know more?
 
-If you enjoyed this workshop, please ...
+If you enjoyed this workshop, please some of Pulumi's other [learning materials](https://www.pulumi.com/learn/)
 
-<Todo!>
+[![Deploy](https://get.pulumi.com/new/button.svg)](https://www.pulumi.com/)
