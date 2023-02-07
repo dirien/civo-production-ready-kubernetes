@@ -49,6 +49,11 @@ folder contains the `FluxCD` component resource.
 
 All the files will get rendered to the `gitops` folder in the root of the project.
 
+> If you can't use Civo DNS you need to change the `provider` value in the `external-dns` component resource to
+> from `civo` to your DNS provider. Check
+> the [external-dns](https://github.com/kubernetes-sigs/external-dns#the-latest-release) documentation for all the
+> options.
+
 ### Step 1 - Run Pulumi Up
 
 The `--replace` flag, we need to tell Pulumi to recreate the GitOps files.

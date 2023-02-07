@@ -10,7 +10,7 @@ FluxCD.
 
 - [Chapter 0 - Create a Civo Kubernetes Cluster with Pulumi](./00-cluster-setup.md)
 - [Chapter 1 - Setup FluxCD](./01-gitops-setup.md)
-- [Chapter 2: Building a CLI using the Pulumi Automation API](./02-automation-api.md)
+- [Chapter 2 - Building a CLI using the Pulumi Automation API](./02-automation-api.md)
 - [Chapter 3 - Destroy the Civo Kubernetes Custer with Pulumi](./03-cluster-teardown.md)
 
 ### Troubleshooting Tips
