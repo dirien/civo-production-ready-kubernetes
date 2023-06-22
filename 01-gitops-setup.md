@@ -56,10 +56,8 @@ All the files will get rendered to the `gitops` folder in the root of the projec
 
 ### Step 1 - Run Pulumi Up
 
-The `--replace` flag, we need to tell Pulumi to recreate the GitOps files.
-
 ```bash
-pulumi up -y -f  --replace  'urn:pulumi:dev::*::collection:**'
+pulumi up -y -f
 ```
 
 If the preview looks good, select `yes` to deploy the cluster
@@ -87,7 +85,7 @@ Duration: 1m5s
 ```
 ➜ k get buckets -n flux-system
 NAME          ENDPOINT                    AGE   READY   STATUS
-flux-bucket   objectstore.lon1.civo.com   99s   True    stored artifact for revision 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+flux-bucket   objectstore.fra1.civo.com   99s   True    stored artifact for revision 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
 
 ❯ k get kustomization -n flux-system
 NAME                  AGE     READY   STATUS
@@ -101,8 +99,8 @@ demo-infrastructure   6m27s   False   kustomization path not found: stat /tmp/ku
 Use the `civo` CLI to get the credentials of your bucket and redirect the output to a file called `civo.env`
 
 ```bash
-civo objectstore show civo-navigate-dev-bucket --region LON1
-civo objectstore credential export --access-key=civo-navigate-dev-access-key --region LON1 > civo.env
+civo objectstore show civo-navigate-dev-bucket --region FRA1
+civo objectstore credential export --access-key=civo-navigate-dev-access-key --region FRA1 > civo.env
 ```
 
 To set the environment variables use the `source` command:

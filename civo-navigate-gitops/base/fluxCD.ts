@@ -35,7 +35,7 @@ export class FluxCD extends pulumi.ComponentResource {
         const flux = new k8s.helm.v3.Release("flux2", {
             name: "flux2",
             chart: "flux2",
-            version: "2.5.1",
+            version: "2.7.0",
             namespace: fluxNS.metadata.name,
             repositoryOpts: {
                 repo: "https://fluxcd-community.github.io/helm-charts"
