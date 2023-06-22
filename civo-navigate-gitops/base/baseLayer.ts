@@ -28,7 +28,9 @@ export function moveFilesForService(args: CollectionArgs, service: Service, pare
     });
 
     new local.Command(`mv-${service.serviceName}`, {
+        triggers: [service.chartVersion],
         create: `cp rendered/${service.serviceName}/*/** ${args.targetDir}/${name}/${service.serviceName}/`,
+        update: `cp rendered/${service.serviceName}/*/** ${args.targetDir}/${name}/${service.serviceName}/`,
     }, {
         parent: parent,
         dependsOn: [service, subFolder]

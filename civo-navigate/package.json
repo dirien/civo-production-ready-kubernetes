@@ -5,7 +5,7 @@
     "@types/node": "18"
   },
   "dependencies": {
-    "@pulumi/pulumi": "3.53.1",
-    "@pulumi/civo": "2.3.1"
+    "@pulumi/pulumi": "3.72.2",
+    "@pulumi/civo": "2.3.6"
   }
 }

@@ -12,7 +12,7 @@ export class Infrastructure extends BaseLayer {
         const metricsServer = new Service("metrics-server", {
             namespaceName: "kube-system",
             chart: "metrics-server",
-            chartVersion: "3.8.3",
+            chartVersion: "3.10.0",
             createNamespace: false,
             chartURL: "https://kubernetes-sigs.github.io/metrics-server/",
         }, {
@@ -23,7 +23,7 @@ export class Infrastructure extends BaseLayer {
         const autoscaler = new Service("autoscaler", {
             namespaceName: "kube-system",
             chart: "cluster-autoscaler",
-            chartVersion: "9.23.0",
+            chartVersion: "9.29.1",
             createNamespace: false,
             chartURL: "https://kubernetes.github.io/autoscaler",
             values: {

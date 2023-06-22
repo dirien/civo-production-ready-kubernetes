@@ -18,6 +18,8 @@ export interface ServiceArgs {
 
 export class Service extends pulumi.ComponentResource {
     readonly serviceName: pulumi.Input<string>;
+    readonly chartVersion: pulumi.Input<string>;
+    readonly values: pulumi.Input<any>;
     readonly provider: pulumi.ProviderResource;
     readonly serviceArgs: ServiceArgs;
 
@@ -116,8 +118,12 @@ export class Service extends pulumi.ComponentResource {
             });
 
         this.serviceName = name;
+        this.chartVersion = args.chartVersion;
+        this.values = args.values;
         this.registerOutputs({
             serviceName: name,
+            chartVersion: args.chartVersion,
+            values: args.values,
         })
     }
 }

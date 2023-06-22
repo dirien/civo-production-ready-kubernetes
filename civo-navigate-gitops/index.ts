@@ -40,6 +40,7 @@ const baseConfig = new BaseConfig("config", {
     clusterName: clusterName,
 })
 
+
 new FluxCD("flux-cd", {
     clusterKubeConfig: clusterKubeConfig,
     bucketAccessKeyId: bucketAccessKeyId,

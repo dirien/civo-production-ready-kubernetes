@@ -139,7 +139,7 @@ export class Services extends BaseLayer {
         const certManager = new Service("cert-manager", {
             namespaceName: "cert-manager",
             chart: "cert-manager",
-            chartVersion: "1.11.0",
+            chartVersion: "1.12.2",
             createNamespace: true,
             chartURL: "https://charts.jetstack.io",
             values: {
@@ -169,7 +169,7 @@ export class Services extends BaseLayer {
         const externalDns = new Service("external-dns", {
             namespaceName: "external-dns",
             chart: "external-dns",
-            chartVersion: "1.12.0",
+            chartVersion: "1.13.0",
             createNamespace: true,
             chartURL: "https://kubernetes-sigs.github.io/external-dns/",
             values: {
@@ -180,9 +180,6 @@ export class Services extends BaseLayer {
                         value: args.token
                     }
                 ],
-                image: {
-                    tag: "v0.13.2"
-                },
                 serviceMonitor: {
                     enabled: true,
                 }
@@ -358,7 +355,7 @@ export class Services extends BaseLayer {
             createNamespace: true,
             chartURL: "https://helm-charts.komodor.io",
             values: {
-                apiKey: "xxx",
+                apiKey: "22cba831-4bcb-4b9e-b7e0-8ea295115d7c",
                 createNamespace: false,
                 watcher: {
                     clusterName: "azure",
